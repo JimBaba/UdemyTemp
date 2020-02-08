@@ -48,3 +48,9 @@ let check = "WTF";
 
 console.log(bothArrays.indexOf(check));
 
+let capitalAbk = abk.slice(0, 4);
+let copy = abk.slice();
+copy.sort();
+
+console.log(capitalAbk, copy, capitalAbk.length);
+
