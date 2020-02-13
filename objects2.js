@@ -66,10 +66,16 @@ console.log(game);
 const game2 = game;
 
 // game2 greift nun auf die gleiche referenz im speicher zu. Das heisst, wenn eins der
-// Objekte geändert wird, werden beide objekte geändert,w eil die gleiche referenz:
+// Objekte geändert wird, werden beide objekte geändert, weil die gleiche referenz:
 
 game["score"] = 5;
 
 console.log(game, game2);
+
+// primitives variablen (string, numbers, etc,) kann man als const oder let definieren,w eil
+// sie sich inhaltlich ändern, objects und arrays werden zumeist als const deklariert, weil 
+// sie sich auf eine referenzadresse beziehen und die Inhalte nicht speichern
+
+
 
 

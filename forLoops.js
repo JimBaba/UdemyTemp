@@ -72,13 +72,17 @@ for(let i = 0; i < myStudents.length; i++) {
 
 // scores zusammenrechnen und durch anzahl studenten teilen (funzt noch nicht)
 
-// let scoreSchnitt = 0;
+let scoreAll = 0;
+let studentCount = myStudents.length;
 
-// for(i = 0; i <= myStudents.length; i++) {
-//     scoreSchnitt += myStudents.score;
-//     console.log(scoreSchnitt);
-// }
-// console.log(`Der Schnitt ist ${scoreSchnitt / myStudents.length}`);
+console.log(studentCount);
+
+for(let i = 0; i < studentCount; i++) {
+    let indiScore = myStudents[i]; 
+    scoreAll += indiScore.score;
+ }
+ console.log(`Die Gesamtsumme aller Scores is ${scoreAll}`);
+ console.log(`Der Schnitt ist ${scoreAll / studentCount}`);
 
 // and with strings, rückwärts jeder buchstabe einzeln
 
@@ -90,4 +94,31 @@ for(i = word.length - 1; i >= 0; i--) {
     console.log(reversedWord);
 }
 
+// nested for-loops basics
 
+for(let i = 1; i <= 10; i++) {
+    console.log("Outer Loop:", i);
+    for(let j = 10; j >= 0; j -= 2) {
+        console.log("   Inner Loop", j);
+    }
+}
+
+// konkretes Beispiel anhand einer Zusammenrechnung eines Gameboards mit verschiedenen Zahlen
+
+const gameBoard = [
+    [4, 32, 8, 4],
+    [64, 8, 32, 2],
+    [8, 32, 16, 4],
+    [2, 8, 4, 2]
+];
+
+let rowCount = 0;
+
+for(i = 0; i < gameBoard.length; i++){
+    let row = gameBoard[i];
+    console.log(row);
+    for(j = 0; j < row.length; j++){
+        rowCount += row[j];
+    }
+}
+console.log(rowCount);
