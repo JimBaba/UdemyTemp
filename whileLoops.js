@@ -43,7 +43,8 @@ while(true){
     }
 }
 
-// besser aber so, weil while(true) ist nicht sehr selbsterklärend
+// besser aber so, weil while(true) ist nicht sehr selbsterklärend. mit der bool variablen
+// ist es verständlicher und man kann den state gameOver ändern
 
 let gameOver = false;
 
