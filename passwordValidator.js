@@ -44,7 +44,7 @@ function isValidPassword(password, username) {
 //     return sum / arr.length;
 // }
 
-// same function , but itn an for of loop
+// same function , but in an for of loop
 
 function avarager(arr) {
     let sum = 0;
