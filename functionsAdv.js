@@ -102,11 +102,81 @@ console.log(together(sumNew(4, 4), subtractNew(8, 6)));
 // or easier to understand/Read: FUNZT NOCH NICHT!
 
 function doubleF(func) {
-    func();
-    func();
+     func();
+     func();
 }
 
 function laugh() {
     console.log("HAHAHAAHA");
 }
+
+function cry(){
+    console.log("buhuhuuu");
+}
+
+// now with two different arguments
+
+function doNtimes(func, num){
+    for(let i = 0; i < num; i++){
+        func();
+    }
+}
+
+// oder random pick one function
+
+function randomF(fu1, fu2){
+    let rnd = Math.random();
+    console.log(rnd);
+    if(rnd <= 0.5){
+        fu1();
+    } else {
+        fu2();
+    }
+}
+
+randomF(laugh, cry);
+
+// functions as return values:
+
+function multiplyBy(num){   // define function that takes, in this case, num as argument
+    return function(x) {    // multiplyBy() will return an new function(x)...
+        return x * num;     //...where num = what I put in as argument
+    }
+}
+
+const double = multiplyBy(2); // now I store this function as a variable with num set to 2
+
+double(4);  // and now I can call my new variable as a function and put in the parameter
+            // I want x to be in the new and final function
+            // in this case is resolves to 4(x) * 2(num)
+
+// so I can reuse the original function to make a function that takes a number and 
+// triples it:
+
+const triple = multiplyBy(3); // set the new function to num === 3
+
+triple(5);  // set the new variable as function with the parameter 5, which will result in 15
+
+const halve = multiplyBy(0.5);
+
+halve(10);
+
+// eine neue function, die checkt, ob jemand ein kind ist (zwischen 0-18)
+
+function isBetweenFunc(x, y){
+    return function(z){
+        if(z < y && z > x){
+            return true;
+        } else {
+            return false;
+        }
+    }
+}
+
+const isChild = isBetweenFunc(1,18);    // isBetweenFunc() mit den Rahmendaten wann man 
+                                        // kind ist (wenn man dazwischen liegt)
+
+isChild(8);         // jetzt ist isChild() eine Funtion, die checkt, ob das Alter
+                    // in der Klammer von isChild() ist das zu prüfende Alter
+
 
