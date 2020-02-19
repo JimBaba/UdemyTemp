@@ -165,12 +165,8 @@ halve(10);
 
 function isBetweenFunc(x, y){
     return function(z){
-        if(z < y && z > x){
-            return true;
-        } else {
-            return false;
+        return z < y && z >= x;
         }
-    }
 }
 
 const isChild = isBetweenFunc(1,18);    // isBetweenFunc() mit den Rahmendaten wann man 
@@ -178,5 +174,62 @@ const isChild = isBetweenFunc(1,18);    // isBetweenFunc() mit den Rahmendaten w
 
 isChild(8);         // jetzt ist isChild() eine Funtion, die checkt, ob das Alter
                     // in der Klammer von isChild() ist das zu prüfende Alter
+
+// jetzt lässt sich die function auch für anderes nutzen, z.B. ist das Wetter gut
+
+const isWeatherNice = isBetweenFunc(18, 25);
+
+isWeatherNice(22); //22 liegt zwischen 18 & 25, deshalb true
+
+
+// Callbacks (im Prinzip functions that use functions?)
+
+function grumpy(){
+    alert("mehmehmeh GO AWAY");
+}
+
+// setTimeout(grumpy, 5000);    // this build in method needs a function and a number in miliseconds as 
+                                // as arguments. It will then call this function after the set delay.
+
+// functioniert auch als anonyme function, also es muss nicht unbedingt
+// eine function vorher definiert werden, besonders genomen, wenn man diese fucnktion nur
+// einmal benötigt, also kein blueprint braucht:
+
+// setTimeout(function(){
+//     alert("anonyme function");
+// }, 5000);
+
+
+// hier eine callback function die mit einem button auf der website reagiert
+// syntax ist nicht so wichtg, kommt später im kurs genauer vor
+
+const btn = document.querySelector('button');
+
+btn.addEventListener('click', function(){
+    alert("WTF? Why did you click?");
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
