@@ -201,7 +201,7 @@ function grumpy(){
 
 
 // hier eine callback function die mit einem button auf der website reagiert
-// syntax ist nicht so wichtg, kommt später im kurs genauer vor
+// syntax ist nicht so wichtg, kommt später im kurs genauer vor (queryselector, eventlistener)
 
 const btn = document.querySelector('button');
 

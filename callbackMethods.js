@@ -96,5 +96,10 @@ const bigWords = words.map(function(n){
 });
 
 console.log(bigWords);
+console.log(words);
 
+const titles = books.map(function(bt){
+    return bt.title;
+})
 
+console.log(titles);
