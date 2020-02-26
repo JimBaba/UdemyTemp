@@ -21,3 +21,57 @@ const checkMrs = movies.find(m => {
 const checkMrs2 = movies.find(m => (
     m.indexOf("Mrs") === 0
 ))
+
+
+
+const books = [
+    {
+        title: 'Good Omens',
+        authors: ['Terry Pratchett', 'Neil Gaiman'],
+        rating: 4.25
+    },
+    {
+        title: 'Bone: The Complete Edition',
+        authors: ['Jeff Smith'],
+        rating: 4.42
+    },
+    {
+        title: 'American Gods',
+        authors: ['Neil Gaiman'],
+        rating: 4.11
+    },
+    {
+        title: 'A Gentleman in Moscow',
+        authors: ['Amor Towles'],
+        rating: 4.36
+    } 
+]
+
+// find the first book in that array with a higher or equal rating of 4.3 (the first, not all)
+
+const goodBook = books.find(b => b.rating >= 4.3);
+
+// find the first book with neil gaiman as author
+
+const neilBook = books.find(b => b.authors.includes("Neil Gaiman"));
+
+// .filter so find all elements with "Neil Gaiman" and put every object element with it
+// in a new array
+
+const gaiman = books.filter(a => a.authors.includes("Neil Gaiman"));
+
+// another example: take an array of numbers and put all odd numbers in a new array
+
+numbers = [1,2,3,4,5,6,7,8,9];
+
+const odds = numbers.filter(n => {
+    return n % 2 === 1;
+})
+
+// or smaller numbers than 5
+
+const smallNum = numbers.filter(n => {
+    return n < 5;
+})
+
+
