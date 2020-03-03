@@ -28,22 +28,26 @@ const books = [
     {
         title: 'Good Omens',
         authors: ['Terry Pratchett', 'Neil Gaiman'],
-        rating: 4.25
+        rating: 4.25,
+        genre: ["fantasy"]
     },
     {
         title: 'Bone: The Complete Edition',
         authors: ['Jeff Smith'],
-        rating: 4.42
+        rating: 4.42,
+        genre: ["essay", "short stories"]
     },
     {
         title: 'American Gods',
         authors: ['Neil Gaiman'],
-        rating: 4.11
+        rating: 4.11,
+        genre: ["short stories"]
     },
     {
         title: 'A Gentleman in Moscow',
         authors: ['Amor Towles'],
-        rating: 4.36
+        rating: 4.36,
+        genre: ["fantasy", "essay"]
     } 
 ]
 
@@ -74,4 +78,16 @@ const smallNum = numbers.filter(n => {
     return n < 5;
 })
 
+// filter for essay or fantasy
 
+const genreSelect = books.filter(g => {
+    return g.genre.includes("fantasy") || g.genre.includes("essay");
+})
+
+// user input search for title
+
+const query = "GOD";
+const result = books.filter(r => {
+    const title = r.title.toLowerCase();
+    return title.includes(query.toLowerCase())
+})
