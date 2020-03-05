@@ -35,9 +35,13 @@ const sum = [10,20,30,40,50].reduce((acc, curVal) => {
 // so we start acc with 100 and then add every element to it, 
 // instead of just adding all elements together
 
-// tallying up votes into an empty object
+// tallying up votes into an empty object - if acc[val] does not exist, create it(else statement)
+// and set it to one.
+// so first element is "y", is not a value in the object so it gets created.
+// after that is an "n" - not existent in the object, so it gets created
+// then another n, n is an existing value so it just gets ++
 
-const votes = ["y","n","n","n","y","y","y","n","y","n","y","n","y","y",];
+const votes = ["y","n","n","n","abscent","y","y","y","n","y","n","y","abscent","n","y","y",];
 
 const result = votes.reduce((acc, val) => {
     if(acc[val]){
@@ -47,3 +51,38 @@ const result = votes.reduce((acc, val) => {
     } return acc;
 }, {});
 
+// sort movie objects by rating
+
+const movies = [
+    {
+        title: "Batman Returns",
+        actors: ["Michael Cain", "Morgan Freeman", "Christian Bale"],
+        genres: ["action", "comic"],
+        rating: 4.8
+    },
+    {   
+        title: "Mad Max",
+        actors: ["Mel Gibson"],
+        genres: ["action"],
+        rating: 4.9
+    },
+    {
+        title: "Ocean's Eleven",
+        actors: ["Brad Pitt", "George Clooney"],
+        genres: ["action", "comedy"],
+        rating: 3.6
+    },
+    {
+        title: "Mr and Mrs Smith",
+        actors: ["Angelina Jolie", "Brad Pitt"],
+        genres: ["comedy"],
+        rating: 2.8
+    }
+];
+
+const moviesRated = movies.reduce((ratedMovies, movie) => {
+    const key = Math.floor(movie.rating);
+    if(!ratedMovies[key]) ratedMovies[key] = [];
+        ratedMovies[key].push(movie);
+    return ratedMovies;
+}, {})
