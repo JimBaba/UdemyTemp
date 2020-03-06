@@ -106,3 +106,10 @@ const copyCatDog = {
     ...catDog
 }
 
+// if you spread an array into an object it automatically makes keys based on the index
+
+const numObj = {...[1,2,3,4,5,6]};
+
+// you can nest different spreads together:
+
+const rnd = [..."Hello",{...catDog},...nums]
