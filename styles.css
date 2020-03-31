@@ -1,3 +1,20 @@
 h1 {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+
+h2 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.special {
+    font-weight: bold;
+    color: red;
+}
+
+#akira-pic {
+    width: 420px;
+}
+
+input[type="password"] {
+    width: 100px;
+}
