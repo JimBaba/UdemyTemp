@@ -59,13 +59,17 @@ const multiply = function(x,y = 1) {
     return x*y;
 }
 
-// or declare the function within the object
+// or declare the function within the object, we can also write it in a way that is
+// shorter and doesn't need a key, it just uses the function variable name as key (see divide)
 
 const math = {
     multiply,
-    divide: function(x,y = 1) {return x/y},
+    divide(x,y = 1) {return x/y},
     addition: function(x,y = 1) {return x+y},
     subtract: function(x,y = 1) {return x-y}
 };
+
+// functions as properties on objects are called methods
+
 
 
