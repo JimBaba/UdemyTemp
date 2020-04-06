@@ -18,3 +18,19 @@ h2 {
 input[type="password"] {
     width: 100px;
 }
+
+footer {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-style: italic;
+}
+
+.todo {
+    font-size: 30px;
+    color: teal; 
+}
+
+.done {
+    color: grey;
+    text-decoration: line-through;
+    opacity: 50%;
+}
